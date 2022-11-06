@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PoteShare</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="vwJ8giudN7H1pToqXeLzAGRJEcy+XrwxMGSQz9u6kvJLMU4bzh0DnkFHz4D61ahhQf+8mfCo3ede7EmLkcc+Pw==" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+
+  <body>
+    <header class="header">
+  <div class="header-inner">
+    <div class="header-left-nav">
+        <a href="/"><img alt="サイトのロゴ画像" src="/assets/logo.png" /></a>
+        <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア" />
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード" />
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="submit" name="commit" value="" class="d-none" data-disable-with="" />
+</form>    </div>
+    <div class="header-right-nav">
+      <div class="nav-item d-sm-inline-block d-none">
+        みや
+      </div>
+      <div class="nav-item">
+        <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" />
+        <ul class="header-nav-menu">
+          <li><a href="/rooms/new">ルーム登録</a></li>
+          <li><a href="/reservations">予約済みルーム一覧</a></li>
+          <li><a href="/rooms/posts">登録済みルーム一覧</a></li>
+          <li><a href="/rooms/account">設定</a></li>
+          <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="clearfix"></div>
+
+<script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
+    <div class="notifications">
+    </div>
+    <div class="container room-show">
+  <div class="row">
+    <div class="col-md-8">
+      <img onerror="this.onerror=null;this.src=&#39;/assets/room01.jpg&#39;;" alt="部屋画像" class="room-show-image" src="/uploads/room/image/6/joshua-ness-Vo52cKzOxMY-unsplash.jpg" />
+      <div class="room-show-detile">
+        <div class="room-show-detile-icon">
+          <a href="/"><img class="host-icon" src="/assets/default_icon.jpg" /></a>
+        </div>
+        <div class="room-show-profile">
+          <p class="room-show-profile-name">自然に囲まれたお部屋</p>
+          <p class="room-show-profile-address">京都府宇治市</p>
+        </div>
+      </div>
+      <p class="room-show-detile-content">夕食付き！京野菜をお楽しみください。</p>
+    </div>
+    <div class="col-md-4">
+      <div class="room-show-nav">
+        <h5 class="price-icon">7000 / 日</h5>
+        <div class="room-show-date-select">
+          <form action="/reservations/new" accept-charset="UTF-8" method="get">
+            <label for="start_date">開始日</label>
+            <input type="date" name="start_date" id="start_date" value="" class="form-control mb-4" />
+            <label for="end_date">終了日</label>
+            <input type="date" name="end_date" id="end_date" value="" class="form-control mb-4" />
+            <label for="person_num">人数</label>
+            <input type="number" name="person_num" id="person_num" value="" class="form-control mb-4" />
+            <input type="hidden" name="room_id" id="room_id" value="6" />
+              <input type="submit" name="commit" value="予約する" class="btn btn-primary form-control" data-disable-with="予約する" />
+</form>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <footer class="footer">
+    <p>© 2020 POTEPAN.INC.</p>
+</footer>
+  </body>
+</html>

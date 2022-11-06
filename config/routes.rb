@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  get 'reservations/show'
+  get 'rooms/new'
+  get 'rooms/show'
+  get 'rooms/account'
+  get 'rooms/profile'
   get 'pages/index'
   get 'pages/show'
+  resources :rooms
+  resources :reservations
   devise_for :users,  :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'

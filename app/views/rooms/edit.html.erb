@@ -1,0 +1,119 @@
+<html><head><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload">
+    <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <title>PoteShare</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="Kk1f65M5Z8cdyXtpb6irHL7/4d08qVnRtPOyPkxPLQXtJzgTL32iZrPMtK0ptD35uGwsYi5e/c+J9X/dAiS/+w=="></head>
+
+  <body>
+    <header class="header">
+  <div class="header-inner">
+    <div class="header-left-nav">
+        <a href="/"><img alt="サイトのロゴ画像" src="/assets/logo.png"></a>
+        <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード">
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="submit" name="commit" value="" class="d-none" data-disable-with="">
+</form>    </div>
+    <div class="header-right-nav">
+      <div class="nav-item d-sm-inline-block d-none">
+        kiki
+      </div>
+      <div class="nav-item">
+        <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg">
+        <ul class="header-nav-menu">
+          <li><a href="/rooms/new">ルーム登録</a></li>
+          <li><a href="/reservations">予約済みルーム一覧</a></li>
+          <li><a href="/rooms/posts">登録済みルーム一覧</a></li>
+          <li><a href="/rooms/account">設定</a></li>
+          <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="clearfix"></div>
+
+<script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
+    <div class="notifications">
+    </div>
+    <div class="container device">
+  <div class="device_frame">
+    <h2 class="mb-3">アカウント編集</h2>
+    <div class="device_inner">
+      <form class="edit_user" id="edit_user" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="TJjYH/2H1BzYbmjfLqtcs2JSfL9IgsuYwko5PZGr9MXWPakTIT2Kd6NaQluCCu6cmv5WNbFiLx7kKekhkiRNdQ==">
+
+        <div class="field">
+          <div class="form-group">
+            <label for="user_email">メールアドレス</label>
+            <input autofocus="autofocus" autocomplete="email" class="form-control" placeholder="メールアドレスを入力してください" type="email" value="k11arafuru@gmail.com" name="user[email]" id="user_email">
+          </div>
+        </div>
+        <div class="field">
+          <div class="form-group">
+            <label for="user_password">変更後パスワード（変更する場合のみ入力）</label>
+            <input autocomplete="new-password" class="form-control" type="password" name="user[password]" id="user_password">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="form-group">
+            <label for="user_password_confirmation">パスワード確認用（変更する場合のみ入力）</label>
+            <input autocomplete="new-password" class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+          </div>
+        </div>
+        <div class="field">
+          <label for="user_current_password">現在のパスワード</label>
+          <input autocomplete="current-password" class="form-control" placeholder="現在のパスワードを入力" type="password" name="user[current_password]" id="user_current_password">
+        </div>
+        <div class="actions">
+          <input type="submit" name="commit" value="更新" class="form-control btn-primary my-4" data-disable-with="更新">
+        </div>
+        <div class="actions">
+          <a class="btn btn-outline-secondary form-control" href="/users/account">戻る</a>
+        </div>
+</form>  　</div>
+  </div>
+</div>
+
+<style>
+.field_with_errors {
+    display: block;
+    background: #ff030385;
+}
+</style>
+    <footer class="footer">
+    <p>© 2020 POTEPAN.INC.</p>
+</footer>
+
+</body></html>

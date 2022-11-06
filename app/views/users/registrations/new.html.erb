@@ -1,30 +1,94 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<html><head>
+    <title>PoteShare</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="a3tSNPl7LFBeeReAcjZDE44KKFxq1B/DoKlYtI4rvpPry+hMpNW+xl3feR5GTSuzcrwtMHtYeNYUuZNPAmghig==">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="/assets/application-a8ca4c276281a74646e94609ae4a0eee0a7918869ecc82a06fbbc9997e6fc3b5.css" data-turbolinks-track="reload">
+    <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+
+  <body>
+    <header class="header">
+  <div class="header-inner">
+    <div class="header-left-nav">
+        <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+        <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード">
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="submit" name="commit" value="" class="d-none" data-disable-with="">
+</form>    </div>
+    <div class="header-right-nav">
+        <div class="nav-item">
+          <a class="btn btn-primary my-2 mx-3" href="/users/sign_in">ログイン</a>
+          <a class="btn btn-secondary" href="/users/sign_up">登録する</a>
+        </div>
+    </div>
   </div>
+</header>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+<div class="clearfix"></div>
+
+<script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
+    <div class="notifications">
+    </div>
+    <div class="container device">
+  <div class="device_frame">
+    <p class="my-4">新しいアカウントを作成</p>
+    <div class="device_inner">
+      <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="a3tSNPl7LFBeeReAcjZDE44KKFxq1B/DoKlYtI4rvpPry+hMpNW+xl3feR5GTSuzcrwtMHtYeNYUuZNPAmghig==">
+
+
+        <div class="field form-row">
+          <div class="col-2 required-b pt-2"></div>
+          <input autocomplete="name" class="form-control col-10 px-2" placeholder="ユーザー名" type="text" name="user[name]" id="user_name">
+        </div>
+
+        <div class="field form-row">
+          <div class="col-2 required-b pt-2"></div>
+          <input autocomplete="email" class="form-control col-10 px-2" placeholder="メールアドレス" type="email" value="" name="user[email]" id="user_email">
+        </div>
+        <div class="field form-row">
+          <div class="col-2 required-b pt-2"></div>
+          <input autocomplete="new-password" class="form-control col-10 px-2" placeholder="パスワード" type="password" name="user[password]" id="user_password">
+        </div>
+        <div class="field form-row">
+          <div class="col-2 required-b pt-2"></div>
+          <input autocomplete="new-password" class="form-control col-10 px-2" placeholder="パスワード確認" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+        </div>
+        <div class="actions">
+          <input type="submit" name="commit" value="新しいアカウントを作成" class="form-control btn-primary my-4 " data-disable-with="新しいアカウントを作成">
+        </div>
+</form>        <a href="/users/sign_in">すでにアカウントをお持ちの方はログイン</a><br>
+
+
+
+
+
+
+    </div>
   </div>
+</div>
+    <footer class="footer">
+    <p>© 2020 POTEPAN.INC.</p>
+</footer>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</body></html>
