@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     @room=Room.new
   end
   def create
-    @room = Room.new(params.require(:post).permit(:content, :user_id,:name, :address,:price, :image ))
+    @room = Room.new(params.require(:room).permit(:content, :user_id,:name, :address,:price, :image ))
     if @room.save
       flash[:notice] = "新規投稿をしました"
       redirect_to :rooms_show
