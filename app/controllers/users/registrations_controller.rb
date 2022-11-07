@@ -8,7 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
 
-    @user = User.new(params.require(:user).permit(:name, :email, :confirmed_at,:password,:password_confirmation,:encrypted_password,:reset_password_token ,:reset_password_sent_at, :remember_created_at))
+    @user = User.new(params.require(:user).permit(:name, :email ,:password,:password_confirmation))
 
 
 
@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     flash[:notice] = "ユーザーを新規登録しました"
 
-    redirect_to :
+    redirect_to :users/sign_up
 
     else
 
