@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     flash[:notice] = "ユーザーを新規登録しました"
 
-    redirect_to :users/sign_up
+    redirect_to :users/account
 
     else
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/account'
   get 'reservations/show'
   get 'rooms/new'
   get 'rooms/show'
