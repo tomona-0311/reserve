@@ -3,43 +3,22 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  def index
+  def new
+    #build_resource
+    #yield resource if block_given?
+    #respond_with resource
+  end
+  # POST /resource
+  def create
+    #super
+    #独自ロジックを記述
+
+    render template: "users/profile", status: :unprocessable_entity
+
+
   end
 
-  def create
 
-    @user = User.new(params.require(:user).permit(:name, :email ,:password,:password_confirmation))
-
-
-
-
-
-
-    if @user.save
-
-   # binding.pry
-
-    flash[:notice] = "ユーザーを新規登録しました"
-
-    redirect_to :users/account
-
-    else
-
-
-
-    #こちらの処理が実行されます。
-
-    render "new", status: :unprocessable_entity
-
-    #上のようにstatus: :unprocessable_entity をつけてあげないと、エラーメッセージ付きのフォームが描画されません。
-
-    end
-
-    end
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
 
   # POST /resource
   # def create
@@ -70,9 +49,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  def detail
-    @user = User.find_by(id: params[:id])
-  end
+ # def detail
+ #   @user = User.find_by(id: params[:id])
+ #end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -86,9 +65,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    "/user/#{current_user.id}"
-  end
+ # def after_sign_up_path_for(resource)
+  #  "/user/#{current_user.id}"
+  #end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
