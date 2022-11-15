@@ -12,10 +12,7 @@ Rails.application.routes.draw do
 
   resources :rooms
   resources :reservations
-  devise_for :users,  :controllers => {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'
-  }
+  devise_for :users, controllers: { sessions: "sessions", registrations: "registrations" } # 同時指定することもできます
 
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"

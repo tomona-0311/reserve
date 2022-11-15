@@ -7,7 +7,13 @@ class Users::SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
-
+　# ↓以下の内容を追記
+def respond_to_on_destroy
+  respond_to do |format|
+    format.all { head :no_content }
+    format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name), status: :see_other }
+  end
+end
   # POST /resource/sign_in
   # def create
   #   super
