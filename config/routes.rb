@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  get 'users/account'
+  get 'users/profile'
+  get 'reservations/show'
+  get 'rooms/new'
+  get 'rooms/show'
+
+
   get 'pages/index'
   get 'pages/show'
-  devise_for :users,  :controllers => {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'
-  }
+
+
+  resources :rooms
+  resources :reservations
+  devise_for :users, controllers: { sessions: "sessions", registrations: "registrations" } # 同時指定することもできます
 
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"

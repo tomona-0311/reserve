@@ -1,0 +1,126 @@
+<html><head><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+
+
+
+  <title>PoteShare</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="MplBESRwCsUuJwyUvYJ8t28IsdAgHiId8k+4hvW9Jfr18ybpmDTPZIAiw1D7nupSaZt8bzLphgPPSXVlu9a3BA=="></head>
+
+  <body>
+    <header class="header">
+  <div class="header-inner">
+    <div class="header-left-nav">
+        <a href="http://localhost:3000/pages/index"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+        <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="header-sharch d-lg-inline-block d-none">
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード">
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="submit" name="commit" value="" class="d-none" data-disable-with="">
+</form>    </div>
+    <div class="header-right-nav">
+      <div class="nav-item d-sm-inline-block d-none">
+        kiki
+      </div>
+      <div class="nav-item">
+       >
+        <ul class="header-nav-menu">
+          <li><a href="/rooms/new">ルーム登録</a></li>
+          <li><a href="/reservations">予約済みルーム一覧</a></li>
+          <li><a href="/rooms/posts">登録済みルーム一覧</a></li>
+          <li><a href="/users/account">設定</a></li>
+          <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="clearfix"></div>
+
+<script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
+    <div class="notifications">
+    </div>
+    <div class="container-fiuld user">
+    <div class="row">
+        <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
+    <ul>
+        <li class=""><a href="/users/account">アカウント</a></li>
+        <li class="active"><a href="/users/profile">プロフィール</a></li>
+    </ul>
+</div>
+<div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
+    <ul>
+        <li class=""><a href="/users/account">アカウント</a></li>
+        <li class="active"><a href="/users/profile">プロフィール</a></li>
+    </ul>
+</div>
+        <div class="col-lg-10 user-view">
+            <div class="user-view-box">
+                <div class="update-content">
+                    <div class="row">
+                        <h5>プロフィール</h5>
+                    </div>
+                </div>
+                <form class="edit_user" id="edit_user_1961" enctype="multipart/form-data" action="/users/profile" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="2tadP+4EuRvUreJLVeMwXIaRfRfaz8J0p1+tgqRK+D1tfkfp76RqcJ2kaRbmpjHJ9a60ibL79A5m8XBeChnMOA==">
+                    <div class="update-content">
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <div class="icon-box">
+                                    <img alt="アイコン画像" class="icon-image host-icon" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                            <label class="col-md-3 required-a" for="image">アイコン画像</label>
+                            <input class="mb-4 col-md-9" placeholder="アイコン画像をアップロード" type="file" name="user[image]" id="user_image">
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                            <label class="col-md-3 required-a" for="name">名前</label>
+                            <input class="form-control mb-4 col-md-9" placeholder="名前を入力" type="text" value="kiki" name="user[name]" id="user_name">
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                            <label class="col-md-3 required-a" for="introduction">自己紹介</label>
+                            <textarea rows="5" class="form-control mb-4 col-md-9" placeholder="自己紹介を入力" name="user[introduction]" id="user_introduction"></textarea>
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                            <input type="submit" name="commit" value="更新" class="col-md-2 btn btn-primary mx-3" data-disable-with="更新">
+                        </div>
+                    </div>
+</form>            </div>
+        </div>
+    </div>
+</div>
+    <footer class="footer">
+    <p>© 2020 POTEPAN.INC.</p>
+</footer>
+
+</body></html>
